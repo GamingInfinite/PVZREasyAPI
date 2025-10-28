@@ -14,6 +14,13 @@ namespace PVZREasyAPI.Patches
             Events.OnBoardUpdate.Invoke(__instance);
         }
 
+        [HarmonyPrefix]
+        [HarmonyPatch(nameof(Board.DisposeBoard))]
+        public static void OnBoardDispose()
+        {
+            PVZEasyAPI._cachedBoard = null;
+        }
+
         [HarmonyPostfix]
         [HarmonyPatch(nameof(Board.StartLevel))]
         public static void OnBoardStart(Board __instance)
@@ -26,6 +33,20 @@ namespace PVZREasyAPI.Patches
         public static void OnAddCoin(ref Coin __result)
         {
             Events.OnAddCoin.Invoke(__result);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(nameof(Board.AddZombie))]
+        public static void OnAddZombie(ref Zombie __result)
+        {
+            Events.OnAddZombie.Invoke(__result);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(nameof(Board.AddPlant))]
+        public static void OnAddPlant(ref Plant __result)
+        {
+            Events.OnAddPlant.Invoke(__result);
         }
     }
 }

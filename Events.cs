@@ -7,5 +7,7 @@ namespace PVZREasyAPI
         public static Action<Board> OnBoardUpdate = (board) => { };
         public static Action<Board> OnBoardStart = (board) => { };
         public static Action<Coin> OnAddCoin = (coin) => { };
+        public static Action<Zombie> OnAddZombie = (zombie) => { };
+        public static Action<Plant> OnAddPlant = (plant) => { };
     }
 }
