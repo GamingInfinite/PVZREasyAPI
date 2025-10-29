@@ -464,6 +464,7 @@
 	<ItemGroup>
 		<Compile Include="Events.cs" />
 		<Compile Include="Patches\BoardPatches.cs" />
+		<Compile Include="Projectiles.cs" />
 		<Compile Include="PVZEasyAPI.cs" />
 	</ItemGroup>
 	

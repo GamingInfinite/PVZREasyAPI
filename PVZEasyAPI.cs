@@ -1,4 +1,5 @@
 ﻿using Il2CppReloaded.Gameplay;
+using Il2CppReloaded.Input;
 using Il2CppReloaded.TreeStateActivities;
 using MelonLoader;
 
@@ -10,7 +11,6 @@ namespace PVZREasyAPI
     public class PVZEasyAPI : MelonMod
     {
         public static Board _cachedBoard;
-        public static MelonLogger.Instance _log;
 
         public static Board Board
         {
@@ -90,7 +90,6 @@ namespace PVZREasyAPI
 
         public override void OnInitializeMelon()
         {
-            _log = LoggerInstance;
             HarmonyInstance.PatchAll();
         }
     }
